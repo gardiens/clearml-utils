@@ -41,8 +41,13 @@ Remplacer dans le docker-compose le path FOLDERCLEARML/ par FOLDER_DIR :)
 
 # Si ça marche pas
 checker 
+
+
 docker exec -it clearml-elastic sh -c "id"
+
+
 ls -ld FOLDER_DIR/
+
 
 ( voir ça https://github.com/clearml/clearml-server/issues/280
 ) 
