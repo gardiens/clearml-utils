@@ -26,6 +26,11 @@ export CLEARML_AGENT_GIT_PASS=git_password_here
 sudo chown -R 1000:1000 /mnt/bdisk/bournez/clearml-server/clearml
 ( pour faire cette étape, on peut faire du privileged de docker :)) 
 
+sudo chown -R 1000:1000 /mnt/bdisk/bournez/clearml-server/clearml
+<!-- docker run --rm -v /mnt/bdisk/bournez/clearml-server/clearml:/data alpine chown -R 1000:0 /data -->
+run in case this one :
+<!-- docker exec -it clearml-elastic sh -c "id" -->
+
 docker compose -fFOLDER_DIR/docker-compose.yml down
 docker compose -f FOLDER_DIR/docker-compose.yml up -d
 
@@ -39,5 +44,7 @@ checker
 docker exec -it clearml-elastic sh -c "id"
 ls -ld FOLDER_DIR/
 
+( voir ça https://github.com/clearml/clearml-server/issues/280
+) 
 # Si ça marche
 checker ça http://localhost:8080/settings/workspace-configuration
